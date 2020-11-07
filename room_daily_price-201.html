@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 <head>
 	<meta charset="utf-8" />
 	<link rel="StyleSheet" href="https://www.ddnayo.com/api/script.css" type="text/css" />
@@ -21,4 +21,151 @@
 </body>
 	
 	
+</html>
+-->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	떠나요닷컴 script api
+</title><meta charset="utf-8" />
+
+	<!-- ddnayo script api 에 의해 생성된 html 디자인을 변경하고자 한다면. 이 css 를 다운받아 수정하여 사용하세요.  -->
+	<link rel="StyleSheet" href="https://www.ddnayo.com/api/script.css" type="text/css" />
+
+	<!-- ddnayo script api 는 jquery 기반하에 제작되었으므로 jquery 을 반드시 기본 참조 하시기 바랍니다.  -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+
+	<!-- 아래 코드를 사용하실 html 코드 head 사이에 추가 하시기 바랍니다. apiuser 값에는 지급된 제휴사 계정을 입력하시기 바랍니다. -->
+	<script type="text/javascript" id="ddnayoapi" src="https://www.ddnayo.com/api/script.aspx?apiuser=testuser00" charset="utf-8"></script>
+
+	<!-- 파라미터로 사용되는 코드는 https://www.ddnayo.com/api/script_code.aspx 에서 조회 가능합니다. -->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			/* 전체 일자별 요금표 */
+			ddnayo.price.dailytable($("#total_daily_price1").get(0), {
+				"id_hotel": "87"		/* 업소 코드 */
+			});
+
+			/* 전체 일자별 요금표 */
+			ddnayo.price.dailytable($("#total_daily_price2").get(0), {
+				"id_hotel": "87"		/* 업소 코드 */
+				, "su_day": "5"			/* 출력일자 : 파라미터 생략시 기본 7일 최대 7일 */
+				, "dt_s": "2016-05-01"			/* 시작일 : 파라미터 생략시 오늘날짜 자동셋팅 */
+			});
+
+			/* 전체 일자별 요금표 */
+			ddnayo.price.dailytable($("#total_daily_price3").get(0), {
+				"id_hotel": "87"		/* 업소 코드 */
+				, "su_day": "5"			/* 출력일자 : 파라미터 생략시 기본 7일 최대 7일 */
+				, "dt_s": "2017-08-09"	/* 시작일 : 파라미터 생략시 오늘날짜 자동셋팅 */
+				, "is_room_grp": "false"	/* 객실그룹여부 : true, false */
+			});
+
+			/* 객실별 일자별 요금표 */
+			ddnayo.room.price.dailytable($("#room_daily_price1").get(0), {
+				"id_hotel": "87"			/* 업소 코드 */
+				, "id_room_type": "1473"	/* 객실타입 코드 */
+			});
+
+			/* 객실별 일자별 요금표 */
+			ddnayo.room.price.dailytable($("#room_daily_price3").get(0), {
+				"id_hotel": "87"			/* 업소 코드 */
+				, "id_room": "397"	    /* 객실타입 코드 */
+			});
+
+		    /* 요금표 */
+			ddnayo.price.table($("#price").get(0), {
+			    "id_hotel": "87"			/* 업소 코드 */
+			});
+
+			/* 객실정보 및 요금표 */
+			ddnayo.room.info($("#room_des").get(0), {
+				"id_hotel": "87"			/* 업소 코드 */
+				, "id_room_type": "1473"	/* 객실타입 코드 */
+			});
+			ddnayo.room.price.dailytable($("#room_daily_price2").get(0), {
+				"id_hotel": "87"			/* 업소 코드 */
+				, "id_room_type": "1473"	/* 객실타입 코드 */
+				, "su_day": 5				/* 출력일자 : 파라미터 생략시 기본 7일 최대 7일 */
+				, "dt_s": "2016-06-07"		/* 시작일 : 파라미터 생략시 오늘날짜 자동셋팅 */
+			});
+
+
+			/* 특별기간 */
+			ddnayo.hotel.seasontable($("#season").get(0), {
+				"id_hotel": "87"			/* 업소 코드 */
+				, "su_pre_month": "5"	    /* 시작 월 간격 : 파라미터 생략시 기본값 3 (현재날자기준 '2'일 경우 -> 2달 이전 부터) */
+                , "su_next_month": "5"      /* 종료 월 간격 : 파라미터 생략시 기본값 3 (현재날짜기준 '4'일 경우 -> 4달 이후 까지) */
+			});
+
+		    /* 위약금/취소수수료 */
+			ddnayo.hotel.panaltytable($("#hotel_price_panalty").get(0), {
+			    "id_hotel": "87"			/* 업소 코드 */
+			});
+
+
+		});
+	</script>
+</head>
+<body>
+    <form method="post" action="./script_example.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="0AYNtdFwqliWJU+W/ui72tUEoZgwD53z6u62WS1O/6zEsuLP72OyKYd67IoSpTiS+BrfICAbExGiB3m3ZPzJiaOiZWpU0i82bPwt4K7Wi/01PVwp" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7F6F2DF3" />
+</div>
+        
+
+	<h2>전체 일자별 요금표 1</h2>
+	<div style="width:700px;" id="total_daily_price1"></div>
+
+	<hr />
+
+	<h2>전체 일자별 요금표 2</h2>
+	<div style="width:500px;" id="total_daily_price2"></div>
+
+	<hr />
+
+	<h2>전체 일자별 요금표 3</h2>
+	<div style="width:500px;" id="total_daily_price3"></div>
+
+	<hr />
+
+	<h2>객실별 일자별 요금표 1</h2>
+	<div style="width:700px;" id="room_daily_price1"></div>
+
+	<hr />
+
+	<h2>객실별 일자별 요금표 2</h2>
+	<div style="width:700px;" id="room_daily_price3"></div>
+
+	<hr />
+
+    <h2>요금표</h2>
+    <div style="width:700px;" id="price"></div>
+    <hr>
+
+	<h2>객실정보 및 요금</h2>
+	<div style="width:500px;" id="room_des"></div>
+	<div style="width:500px; margin-top:20px;" id="room_daily_price2"></div>
+
+	<hr />
+
+	<h2>특별기간</h2>
+	<div style="width:700px;" id="season"></div>
+
+    <hr />
+
+    <h2>위약금/취소수수료</h2>
+    <div style="width:700px;" id="hotel_price_panalty"></div>
+
+    <a id='ctl05' style='display:none;'></a></form>
+</body>
 </html>
