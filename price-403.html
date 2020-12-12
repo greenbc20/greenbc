@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+</title><meta charset="utf-8" />
+	<link rel="StyleSheet" href="https://www.ddnayo.com/api/script.css" type="text/css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" id="ddnayoapi" src="https://www.ddnayo.com/api/script.aspx?apiuser=greenbc20.github.io" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/* 201호 일자별 요금표 */
+			ddnayo.room.price.dailytable($("#room_daily_price3").get(0), {
+				"id_hotel": "11658"			/* 업소 코드 */
+				, "id_room": "133473"	    /* 객실타입 코드 */
+			});
+		});
+	</script>
+</head>
+<body>
+	<div style="width:700px;" id="room_daily_price3"></div>
+</body>
+</html>
